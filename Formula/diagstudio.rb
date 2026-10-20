@@ -11,7 +11,7 @@ class Diagstudio < Formula
   end
 
   def install
-    system "curl" "-fsSL", "-o", "#{buildpath}/smoke-test.sh", "https://raw.githubusercontent.com/DiagStudio/diagstudio/main/scripts/smoke-test.sh"
+    system "curl", "-fsSL", "-o", "#{buildpath}/smoke-test.sh", "https://raw.githubusercontent.com/DiagStudio/diagstudio/main/scripts/smoke-test.sh"
     system "bash", "scripts/build.sh"
     bin.install ".build/diagstudio"
   end
