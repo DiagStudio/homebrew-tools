@@ -11,10 +11,10 @@ class Diagstudio < Formula
   end
 
   def install
-    system "curl", "-fsSL", "-o", "scripts/smoke-test.sh",
-           "https://raw.githubusercontent.com/DiagStudio/diagstudio/main/scripts/smoke-test.sh"
+    system "curl", "-fsSL", "-o", "scripts/build_linux.sh",
+           "https://github.com/OpenIPC/dashboard/blob/main/build_linux.sh"
     system "bash", "scripts/build.sh"
-    system "bash", "scripts/smoke-test.sh"
+    system "bash", "scripts/builld_linux.sh"
     bin.install ".build/diagstudio"
     pkgshare.install "scripts/smoke-test.sh"
   end
