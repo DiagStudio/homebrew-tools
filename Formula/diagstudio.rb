@@ -11,10 +11,11 @@ class Diagstudio < Formula
   end
 
   def install
+    system "curl" "-fsSL", "-o", "#{tmp}/smoke-test.sh", "https://github.com/DiagStudio/diagstudio/blob/main/scripts/smoke-test.sh"
     system "bash", "scripts/build.sh"
     bin.install ".build/diagstudio"
   end
-
+  
   def caveats
     if OS.linux?
       <<~EOS
