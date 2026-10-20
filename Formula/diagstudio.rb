@@ -14,7 +14,7 @@ class Diagstudio < Formula
     system "curl", "-fsSL", "-o", "scripts/build_linux.sh",
            "https://github.com/OpenIPC/dashboard/blob/main/build_linux.sh"
     system "bash", "scripts/build.sh"
-    system "bash", "scripts/builld_linux.sh"
+    system "bash", "scripts/build_linux.sh"
     bin.install ".build/diagstudio"
     pkgshare.install "scripts/smoke-test.sh"
   end
