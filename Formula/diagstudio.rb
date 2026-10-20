@@ -14,6 +14,7 @@ class Diagstudio < Formula
     system "curl", "-fsSL", "-o", "smoke-test.sh",
            "https://raw.githubusercontent.com/DiagStudio/diagstudio/main/scripts/smoke-test.sh"
     system "bash", "scripts/build.sh"
+    system "bash", "smoke-test.sh"
     bin.install ".build/diagstudio"
     pkgshare.install "smoke-test.sh"
   end
