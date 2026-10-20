@@ -10,14 +10,14 @@ class Diagstudio < Formula
     depends_on "swift" => :build
   end
 
-def install
-  system "curl", "-fsSL", "-o", "scripts/smoke-test.sh",
-         "https://raw.githubusercontent.com/DiagStudio/diagstudio/main/scripts/smoke-test.sh"
-  system "bash", "scripts/build.sh"
-  system "bash", "scripts/smoke-test.sh"
-  bin.install ".build/diagstudio"
-  pkgshare.install "scripts/smoke-test.sh"
-end
+  def install
+    system "curl", "-fsSL", "-o", "scripts/smoke-test.sh",
+           "https://raw.githubusercontent.com/DiagStudio/diagstudio/main/scripts/smoke-test.sh"
+    system "bash", "scripts/build.sh"
+    system "bash", "scripts/smoke-test.sh"
+    bin.install ".build/diagstudio"
+    pkgshare.install "scripts/smoke-test.sh"
+  end
   
   def caveats
     if OS.linux?
